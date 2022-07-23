@@ -1,7 +1,6 @@
 import List from './MyList';
-const list = List
 function Container() {
-    return <h1>{list}</h1>
+    return <List/>
 }
 
 export default Container
