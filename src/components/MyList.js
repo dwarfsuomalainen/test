@@ -1,10 +1,12 @@
-function MyList(header,items){
+
+
+function MyList(props){
     
     return (
         <>
-            <h1>{header}</h1>
+            <h1>{props.header}</h1>
             <ol>
-                {items.map((item) => <li key={item.id}>{item.text}</li>)}
+                {props.items.map((item) => <li key={item.id}>{item.text}</li>)}
             </ol>
             
         </>
