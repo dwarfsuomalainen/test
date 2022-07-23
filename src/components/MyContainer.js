@@ -1,6 +1,6 @@
-import List from './MyList';
-function Container() {
-    return <List/>
+import MyList from './MyList';
+function MyContainer() {
+    return <MyList/>
 }
 
-export default Container
+export default MyContainer
