@@ -1,7 +1,6 @@
-
-
 function MyList(props){
-    
+
+
     return (
         <>
             <h1>{props.header}</h1>
@@ -12,7 +11,5 @@ function MyList(props){
         </>
     )
 }
-
-
 
 export default MyList
