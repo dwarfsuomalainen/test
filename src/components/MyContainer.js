@@ -9,9 +9,8 @@ import {useState} from "react"
         const[text,setText] = useState('');
         const [clicked, setClicked] = useState(false);
         const updateItem = (id) => {
-            
-            setItems(items.map(item => item.id === id ? {...item, clicked: true} : item))  
-        }
+            setItems(items.map(item => item.id === id ? {...item, clicked: !item.clicked} : item))
+          }
         
         const addLine = (line) => {
             const id = Math.floor(Math.random()*1000000 + 1000)
