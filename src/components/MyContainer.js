@@ -1,17 +1,23 @@
 import MyList from './MyList';
 import {useState} from "react"
 
-    const MyContainer = (props, onAdd) =>{
+    const MyContainer = (props) =>{
         const [items,setItems] = useState([
             {id: "1", text: "This is first item of list"},
             {id: "2", text: "This is second item of list"}
         ]);
         const[text,setText] = useState('');
+        
+        const addLine = (line) => {
+            const id = Math.floor(Math.random()*1000000 + 1000)
+            const newLine = {id,...line}
 
+            setItems([...items, newLine])
+          }
         const onSubmit = (e) => {
             e.preventDefault()
     
-            onAdd({name: text})
+            addLine({name: text})
             setText("")
     
         }

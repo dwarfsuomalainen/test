@@ -1,6 +1,6 @@
 function MyList(props){
 
-
+    console.log(props)
     return (
         <>
             <h1>{props.header}</h1>
