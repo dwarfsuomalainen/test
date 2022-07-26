@@ -3,15 +3,19 @@ import {useState} from "react"
 
     const MyContainer = (props) =>{
         const [items,setItems] = useState([
-            {id: "1", text: "This is first item of list"},
-            {id: "2", text: "This is second item of list"}
+            {id: "1", text: "This is first item of list", clicked: false},
+            {id: "2", text: "This is second item of list", clicked: false}
         ]);
         const[text,setText] = useState('');
+        const [clicked, setClicked] = useState(false);
+        const updateItem = (id) => {
+            
+            setItems(items.map(item => item.id === id ? {...item, clicked: true} : item))  
+        }
         
         const addLine = (line) => {
             const id = Math.floor(Math.random()*1000000 + 1000)
-            const newLine = {id,...line}
-
+            const newLine = {id,...line, clicked}
             setItems([...items, newLine])
           }
         const onSubmit = (e) => {
@@ -19,14 +23,14 @@ import {useState} from "react"
     
             addLine({text: text})
             setText("")
-    
+            setClicked(false);
         }
       
 
 
     return (
         <div>
-        <MyList items={items} header={props.header} />
+        <MyList updateItem={updateItem} items={items} header={props.header} />
         
         <form onSubmit={onSubmit}>
             <label>Add items to List</label>
