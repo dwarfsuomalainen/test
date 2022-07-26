@@ -17,7 +17,7 @@ import {useState} from "react"
         const onSubmit = (e) => {
             e.preventDefault()
     
-            addLine({name: text})
+            addLine({text: text})
             setText("")
     
         }
